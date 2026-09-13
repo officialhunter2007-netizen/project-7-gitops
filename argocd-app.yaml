@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+
+metadata:
+  name: flask-app
+  namespace: argocd
+
+spec:
+  project: default
+
+  source:
+    repoURL: https://github.com/officialhunter2007-netizen/project-7-gitops.git
+    targetRevision: main
+    path: k8s/production
+
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: production
+
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+
+
