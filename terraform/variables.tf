@@ -10,7 +10,7 @@ variable "aws_account_id"{
 }
 
 variable "cluster"{
-    default = "project-7-cluster"
+    default = "project-7-eks-cluster"
 }
 
 variable "az"{
