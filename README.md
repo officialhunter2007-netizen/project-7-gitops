@@ -7,7 +7,7 @@ This project builds a production-grade GitOps pipeline on Kubernetes using Amazo
 The application never gets deployed directly from the pipeline. GitHub Actions builds and pushes the image to ECR, then updates the image tag in a separate GitOps repository. ArgoCD detects the change in Git and syncs the cluster automatically. The pipeline never touches the cluster.
 
 ## Architecture
-
+<img src="https://github.com/officialhunter2007-netizen/project-7-gitops/blob/main/project7-architecture.png" width="800" alt="Architecture Diagram">
 Two GitHub repositories serve two separate purposes:
 
 **project-7-app** contains the Flask application, Dockerfile, tests, and GitHub Actions pipeline. Every push to main triggers a build, security scan, and image push to ECR. The pipeline then commits the new image tag to project-7-gitops.
